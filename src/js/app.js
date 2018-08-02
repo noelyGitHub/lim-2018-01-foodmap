@@ -80,8 +80,7 @@ function callback(results, status) {
             createMarker(results[i]);
             insertData(results[i]);
         }
-    }
-    
+    }    
     console.log(results)
 }
 function createMarker(place) {
@@ -99,20 +98,39 @@ function makeInfoBox(controlDiv, map) {
     // Set CSS for the control border.
     var controlUI = document.createElement('div');
     controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
-    controlUI.style.backgroundColor = '#fff';
-    controlUI.style.border = '2px solid #fff';
-    controlUI.style.borderRadius = '2px';
+    controlUI.style.backgroundColor = '#000';
+    controlUI.style.border = 'none';
+    controlUI.style.borderRadius = '.4em';
     controlUI.style.marginBottom = '22px';
     controlUI.style.marginTop = '10px';
+    controlUI.style.padding = '.5em 1em';
     controlUI.style.textAlign = 'center';
     controlDiv.appendChild(controlUI);
 
     // Set CSS for the control interior.
     var controlText = document.createElement('div');
-    controlText.style.color = 'rgb(25,25,25)';
-    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+    controlText.style.color = '#fff';
     controlText.style.fontSize = '100%';
     controlText.style.padding = '6px';
-    controlText.innerText = 'La mapa muestra todos los respaturant cerca.';
+    controlText.innerText = 'RESTAURANT CERCA DE TI';
     controlUI.appendChild(controlText);
+}
+window.searchLocationfirebase = (name) => {  
+    console.log('holaaa');
+    let user = firebase.auth().currentUser;
+    let info;
+    const dataUser = firebase.database().ref('/places/'+user.uid).orderByChild('name').startAt(name).limitToFirst(10);
+    dataUser.on('value',data=>{
+        console.log(data.val());
+    })
+    return dataUser;
+  }
+window.viewDataRestaurant=(uidRestaurant)=>{
+    let userId = firebase.auth().currentUser;
+    const dataPostUser = firebase.database().ref('/places/'+userId.uid+'/'+ uidRestaurant);
+    dataPostUser.once('value', data => {
+        let dataRestaurant=data.val();
+        console.log(dataRestaurant);        
+        viewInformation(dataRestaurant.name,dataRestaurant.opening_hours,dataRestaurant.rating,dataRestaurant.vicinity);
+    });
 }

@@ -19,26 +19,34 @@
 </head>
 <body>
     <header>
-        <div>
-            <h3>FOODMAP</h3>
+        <div class="header-title">
+            <h3>FoodMAP</h3>
         </div>
     </header>
     <section>
         <div id="map"></div>
         <div id="search-lista">
             <div id="search-lista-content">
-                <h3>Comida cerca de ti</h3>
                 <div>
-                    <input type="text" id="foodType" placeholder="¿Qué tipo de comida buscas?">
+                    <input type="text" id="foodType" placeholder="¿Qué buscas?">
                     <span class='icon-search'></span>
                 </div>
 
             </div>
+            <div class='content-search'>
+                <ul class='content-search-location' id='content-search-location'></ul>
+            </div> 
         </div>
+        <div id='div_new_modal'></div>
+    
+  
     </section>
     <footer></footer>
     <script src="js/conexion.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/componente.js"></script>    
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>    
+    <script src="js/mainEventModal.js"></script>
 <!--     <script src="js/fireb\asemap.js"></script>
  --><!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9_KUm1oTSvqovwkrZmAp7Cd-PZTYlpFo&libraries=places"></script>
  -->    <script async defer
