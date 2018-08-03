@@ -1,4 +1,5 @@
-modalElements = (name, address, open, calificacion) => {
+modalElements = (name, address, open, calificacion,img) => {
+    
     return `
     <div id='form_modal' class='form_modal'>    
         <div class='headerPopup'>    
@@ -6,7 +7,7 @@ modalElements = (name, address, open, calificacion) => {
             <h4>${name}</h4>
         </div>
         <div class='content-img'>
-            <img src='http://2.bp.blogspot.com/-3IZnCz2U88w/T75fTN7LqMI/AAAAAAAAAMI/lrh07yZ4_l8/s1600/causa-rellena.jpg'>
+            <img src='${img?img:'http://2.bp.blogspot.com/-3IZnCz2U88w/T75fTN7LqMI/AAAAAAAAAMI/lrh07yZ4_l8/s1600/causa-rellena.jpg'}'>
         </div>
         <label class='messageApp'>No vayas!!</label>
         <div class="box-input"> 
@@ -25,11 +26,11 @@ modalElements = (name, address, open, calificacion) => {
             </tr> 
             <tr>    
                 <td>Estado</td>
-                <td>${open}</td>
+                <td id='status'></td>
             </tr> 
             <tr>    
                 <td>Calificacion</td>
-                <td>${calificacion}</td>
+                <td><ol id='stars'></ol></td>
             </tr>
            </table>
             
