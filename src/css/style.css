@@ -2,7 +2,37 @@
     margin: 0px;
     font-family: "freight-sans-pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 }
+/*splash*/
 
+.body-splash{
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+.body-splash div{
+    width: 100%;
+    margin-top: 300px;
+}
+.icon-spoon-knife{
+    background: #000;
+    color: #ec7307;
+    padding: 1em 1em;
+    font-size: 16px;
+    border-radius: 100%;
+    margin-top: 1em;
+    -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: example2;
+    animation-duration: 2s;
+}
+@keyframes example2 {
+    0%   {background-color: #ec7307; left:0px; top:0px;}
+    25%  {background-color:#53c028; left:200px; top:0px;}
+    50%  {background-color:rgb(53, 182, 182); left:200px; top:200px;}
+    75%  {background-color:rgb(204, 32, 175); left:0px; top:200px;}
+    100% {background-color:rgb(134, 29, 103); left:0px; top:0px;}
+}
+/*Termina splash*/
 header{
     background: #100f0f;
     color: #ec7307;
