@@ -1,4 +1,3 @@
-
 let map;
 let service;
 let miUbicacion={};
@@ -24,7 +23,6 @@ initMap=_=>{
             location: miUbicacion,
             radius: '5000',
             type: ['restaurant'],
-            fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry'],
             }, callback);
         initAuthentication();
     }
@@ -38,11 +36,11 @@ initMap=_=>{
     }
 }
 callback=(results, status) =>{
+    console.log(results,status);
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
-            verificationSesion(results[i]);
-            imageFirebase();
+            verificationSesion(results[i]);            
         }
     }
 }
@@ -115,8 +113,7 @@ window.viewDataRestaurant = (uidRestaurant) => {
     let userId = firebase.auth().currentUser;
     const dataPostUser = firebase.database().ref('/places/' + userId.uid + '/' + uidRestaurant);
     dataPostUser.once('value', data => {
-        let dataRestaurant = data.val(); 
-           
+        let dataRestaurant = data.val();            
         viewInformation(dataRestaurant.name, dataRestaurant.opening_hours, dataRestaurant.rating, dataRestaurant.vicinity,dataRestaurant.photo);
     });
 }

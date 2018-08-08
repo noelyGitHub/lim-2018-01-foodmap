@@ -9,7 +9,7 @@ modalElements = (name, address, open, calificacion,img) => {
         <div class='content-img'>
             <img src='${img?img:'http://2.bp.blogspot.com/-3IZnCz2U88w/T75fTN7LqMI/AAAAAAAAAMI/lrh07yZ4_l8/s1600/causa-rellena.jpg'}'>
         </div>
-        <label class='messageApp'>No vayas!!</label>
+        <label class='messageApp'>Podria ser la mejor opción!!</label>
         <div class="box-input"> 
         <table id="search">
             <tr>    

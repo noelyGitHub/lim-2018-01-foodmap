@@ -9,28 +9,42 @@
     color: #fff;
     text-align: center;
 }
+.body-splash-image{
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+}
 .body-splash div{
     width: 100%;
     margin-top: 300px;
 }
 .icon-spoon-knife{
     background: #000;
-    color: #ec7307;
+    color: #fff;
     padding: 1em 1em;
     font-size: 16px;
     border-radius: 100%;
     margin-top: 1em;
-    -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
-    animation-name: example2;
-    animation-duration: 2s;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 25s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 30s;
 }
-@keyframes example2 {
+#icon-splash{
+    margin-top: 30%;
+}
+@keyframes example {
     0%   {background-color: #ec7307; left:0px; top:0px;}
-    25%  {background-color:#53c028; left:200px; top:0px;}
-    50%  {background-color:rgb(53, 182, 182); left:200px; top:200px;}
-    75%  {background-color:rgb(204, 32, 175); left:0px; top:200px;}
-    100% {background-color:rgb(134, 29, 103); left:0px; top:0px;}
+    10%  {background-color:#53c028; left:200px; top:0px;}
+    10%  {background-color:rgb(53, 182, 182); left:200px; top:200px;}
+    30%  {background-color:rgb(204, 32, 175); left:0px; top:200px;}
+    40% {background-color:rgb(134, 29, 103); left:0px; top:0px;}
+    50%   {background-color: #b4c422; left:0px; top:0px;}
+    60%  {background-color:#020704; left:200px; top:0px;}
+    70%  {background-color:#16ca5b; left:200px; top:200px;}
+    80%  {background-color:rgb(87, 24, 146); left:0px; top:200px;}
+    90% {background-color:rgb(20, 76, 150); left:0px; top:0px;}
+    100% {background-color:rgb(168, 79, 28); left:0px; top:0px;}
 }
 /*Termina splash*/
 header{

@@ -1,6 +1,7 @@
 let popup=false;
 let inputSearch = document.getElementById('foodType');
 let listSearch = document.getElementsByClassName('content-search-location');
+
 //search1 Restaurant
 inputSearch.addEventListener('keyup', (e) => {
     document.getElementById('content-search-location').style.display = 'block';//modal lista coincidente
@@ -13,7 +14,9 @@ inputSearch.addEventListener('keyup', (e) => {
 for (let index = 0; index < listSearch.length; index++) {
     listSearch[index].addEventListener('click', (e) => {
         let element = event.target;
-        viewDataRestaurant(element.id);
+        imageFirebase();
+        viewDataRestaurant(element.id);        
+        document.getElementById('body-splash-image').style.display = 'none';
         document.getElementById('content-search-location').style.display = 'none';//modal lista coincidente          
     }, false);
 }
@@ -21,6 +24,7 @@ for (let index = 0; index < listSearch.length; index++) {
 const viewInformation = (name, open, calificacion, address,img) => {
     document.getElementById('div_new_modal').style.display = 'block';
     document.getElementById('div_new_modal').innerHTML = '';
+    document.getElementById('content-image-places').innerHTML = '';
     document.getElementById('div_new_modal').innerHTML += modalElements(name, address, open, calificacion,img);    
     eventsModal();
     stars(calificacion);//muestra las estrellas   
