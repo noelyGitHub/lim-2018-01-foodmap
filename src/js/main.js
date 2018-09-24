@@ -18,10 +18,10 @@ for (let index = 0; index < listSearch.length; index++) {
     }, false);
 }
 // funciones
-const viewInformation = (name, open, calificacion, address,img) => {
+const viewInformation = (name, open, calificacion, address,img, precio) => {
     document.getElementById('div_new_modal').style.display = 'block';
     document.getElementById('div_new_modal').innerHTML = '';
-    document.getElementById('div_new_modal').innerHTML += modalElements(name, address, open, calificacion,img);    
+    document.getElementById('div_new_modal').innerHTML += modalElements(name, address, open, calificacion,img, precio);    
     eventsModal();
     stars(calificacion);//muestra las estrellas   
 }

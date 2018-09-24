@@ -1,4 +1,4 @@
-modalElements = (name, address, open, calificacion,img) => {
+modalElements = (name, address, open, calificacion,img, precio) => {
     
     return `
     <div id='form_modal' class='form_modal'>    
@@ -14,11 +14,11 @@ modalElements = (name, address, open, calificacion,img) => {
         <table id="search">
             <tr>    
                 <td>Precios</td>
-                <td>+20 soles</td>
+                <td>+${precio} soles</td>
             </tr> 
             <tr>    
-                <td>Servicio</td>
-                <td>Domicilio</td>
+                <td>Teléfono</td>
+                <td>930926642/td>
             </tr> 
             <tr>    
                 <td>Direccion</td>

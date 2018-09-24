@@ -37,12 +37,13 @@ initMap=_=>{
         alert('Tu navegador no soporta geolocalizacion');
     }
 }
-callback=(results, status) =>{
+callback=(results, status) =>{    
+    imageFirebase();
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+            console.log('hola')
             createMarker(results[i]);
             verificationSesion(results[i]);
-            imageFirebase();
         }
     }
 }
@@ -95,12 +96,13 @@ createMarker=place=> {
 
 imageFirebase=()=>{
     let user = firebase.auth().currentUser;
-    let imageURL=firebase.database().ref('places/'+user.uid);
+    let imageURL = firebase.database().ref('places/'+ '0YIPWYvnC1VR2BhFpUGuiHoEKbf2');
     imageURL.off();
-    imageURL.once('value', data=>{
+    imageURL.once('value', data => {
         let dataURL=data.val();
         for (const key in dataURL) {
             let image=dataURL[key].photo;
+            console.log(image)
             viewPhotoPlace(image);
         }
     })
@@ -108,15 +110,14 @@ imageFirebase=()=>{
 window.searchPlacesOfFirebase = (name) => {
     let user = firebase.auth().currentUser;
     let info;
-    const dataUser = firebase.database().ref('/places/' + user.uid).orderByChild('name').startAt(name).limitToFirst(6);
+    const dataUser = firebase.database().ref('/places/' +'0YIPWYvnC1VR2BhFpUGuiHoEKbf2').orderByChild('name').startAt(name).limitToFirst(6);
    return dataUser;
 }
 window.viewDataRestaurant = (uidRestaurant) => {
     let userId = firebase.auth().currentUser;
-    const dataPostUser = firebase.database().ref('/places/' + userId.uid + '/' + uidRestaurant);
+    const dataPostUser = firebase.database().ref('/places/' + '0YIPWYvnC1VR2BhFpUGuiHoEKbf2'+ '/' + uidRestaurant);
     dataPostUser.once('value', data => {
-        let dataRestaurant = data.val(); 
-           
-        viewInformation(dataRestaurant.name, dataRestaurant.opening_hours, dataRestaurant.rating, dataRestaurant.vicinity,dataRestaurant.photo);
+        let dataRestaurant = data.val();           
+        viewInformation(dataRestaurant.name, dataRestaurant.opening_hours, dataRestaurant.rating, dataRestaurant.vicinity,dataRestaurant.photo, dataRestaurant.precio);
     });
 }
