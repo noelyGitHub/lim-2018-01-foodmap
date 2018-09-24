@@ -18,7 +18,7 @@ modalElements = (name, address, open, calificacion,img, precio) => {
             </tr> 
             <tr>    
                 <td>Teléfono</td>
-                <td>930926642/td>
+                <td>930926642</td>
             </tr> 
             <tr>    
                 <td>Direccion</td>
