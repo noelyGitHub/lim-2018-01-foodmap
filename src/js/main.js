@@ -24,12 +24,7 @@ for (let index = 0; index < listSearch.length; index++) {
 const viewInformation = (name, open, calificacion, address,img, precio) => {
     document.getElementById('div_new_modal').style.display = 'block';
     document.getElementById('div_new_modal').innerHTML = '';
-<<<<<<< HEAD
     document.getElementById('div_new_modal').innerHTML += modalElements(name, address, open, calificacion,img, precio);    
-=======
-    document.getElementById('content-image-places').innerHTML = '';
-    document.getElementById('div_new_modal').innerHTML += modalElements(name, address, open, calificacion,img);    
->>>>>>> d71ab27e9ab886345742c58fd3c2c64553997a76
     eventsModal();
     stars(calificacion);//muestra las estrellas   
 }

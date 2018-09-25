@@ -35,22 +35,12 @@ initMap=_=>{
         alert('Tu navegador no soporta geolocalizacion');
     }
 }
-<<<<<<< HEAD
 callback=(results, status) =>{    
     imageFirebase();
-=======
-callback=(results, status) =>{
-    console.log(results,status);
->>>>>>> d71ab27e9ab886345742c58fd3c2c64553997a76
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
-            console.log('hola')
             createMarker(results[i]);
-<<<<<<< HEAD
             verificationSesion(results[i]);
-=======
-            verificationSesion(results[i]);            
->>>>>>> d71ab27e9ab886345742c58fd3c2c64553997a76
         }
     }
 }
@@ -124,12 +114,7 @@ window.viewDataRestaurant = (uidRestaurant) => {
     let userId = firebase.auth().currentUser;
     const dataPostUser = firebase.database().ref('/places/' + '0YIPWYvnC1VR2BhFpUGuiHoEKbf2'+ '/' + uidRestaurant);
     dataPostUser.once('value', data => {
-<<<<<<< HEAD
         let dataRestaurant = data.val();           
         viewInformation(dataRestaurant.name, dataRestaurant.opening_hours, dataRestaurant.rating, dataRestaurant.vicinity,dataRestaurant.photo, dataRestaurant.precio);
-=======
-        let dataRestaurant = data.val();            
-        viewInformation(dataRestaurant.name, dataRestaurant.opening_hours, dataRestaurant.rating, dataRestaurant.vicinity,dataRestaurant.photo);
->>>>>>> d71ab27e9ab886345742c58fd3c2c64553997a76
     });
 }
